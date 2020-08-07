@@ -9,6 +9,19 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # outputs array of strings
+    route = [None] * length
+    # create a dictionary of all tickets
+    tix = {}
+    for t in tickets:
+        tix[t.source] = t.destination
+    
+    # "The crux of this problem requires us to 'link' tickets together"
+    link = tix["NONE"] # first ticket
+
+    for i in range(length):
+        route[i] = link
+        link = tix[link] # update the link ot the next one
+
 
     return route
