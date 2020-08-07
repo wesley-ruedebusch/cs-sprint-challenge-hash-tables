@@ -2,7 +2,17 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    num_table = {}
+    result = []
+
+    for n in a:
+
+        # input number into dictionary 
+        num_table[n] = n
+        # check to see if negative version is in dict
+        # `0` doesn't have a negative version - fixes large test
+        if n != 0 and -n in num_table:
+            result.append(abs(n)) # abs() b/c input could give neg value first
 
     return result
 
